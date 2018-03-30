@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>Hexo</title>
+<title>Github更换主题中遇到的问题 | Hexo</title>
 
 
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -121,41 +121,16 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <div class="carousel">
-    <img src="/xueyb0911.github.io/img/head-img.jpg">
-</div>
-
-
-
-
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
 <article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/xueyb0911.github.io/2018/03/30/Github更换主题中遇到的问题/">Github更换主题中遇到的问题</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2018年03月30日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
+    <div class="post-head">
+        <h1 id="Github更换主题中遇到的问题">
             
-                1.更换之后在本地显示正常，但部署到网上样式乱了。
-原因： 
- _config.yml文件里的url/root路径不对，导致样式文件没有加载到，需要修改。
-
-解决方案：
-比如：我的github地址是https://xueyb0911....
+	            Github更换主题中遇到的问题
             
-        </p> 
-    </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+        </h1>
+        <div class="post-meta">
     
     
     <span class="categories-meta fa-wrap">
@@ -184,71 +159,53 @@
     </span>
 </div>
 
-        </div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="1-更换之后在本地显示正常，但部署到网上样式乱了。"><a href="#1-更换之后在本地显示正常，但部署到网上样式乱了。" class="headerlink" title="1.更换之后在本地显示正常，但部署到网上样式乱了。"></a>1.更换之后在本地显示正常，但部署到网上样式乱了。</h3><ol>
+<li><p>原因： </p>
+<p> _config.yml文件里的url/root路径不对，导致样式文件没有加载到，需要修改。</p>
+</li>
+<li><p>解决方案：</p>
+<p>比如：我的github地址是<a href="https://xueyb0911.github.io">https://xueyb0911.github.io</a>, 则url改为<a href="https://xueyb0911.github.io/blog">https://xueyb0911.github.io/blog</a>, root改为：/xueyb0911.github.io/。 如果地址是<a href="https://xueyb0911.github.io/blog">https://xueyb0911.github.io/blog</a>, 则root要改为：/blog。</p>
+</li>
+</ol>
+<h3 id="2-更换主题后更改了主题中的一张图片，在本地显示正常，但是部署到服务器还是原来的图片"><a href="#2-更换主题后更改了主题中的一张图片，在本地显示正常，但是部署到服务器还是原来的图片" class="headerlink" title="2.更换主题后更改了主题中的一张图片，在本地显示正常，但是部署到服务器还是原来的图片"></a>2.更换主题后更改了主题中的一张图片，在本地显示正常，但是部署到服务器还是原来的图片</h3><p>​      可能是缓存的问题，过段时间在刷新一下就可以了。或者hexo clean 清理一下，然后重新编译，上传。</p>
 
-        <div class="post-permalink"> 
-            <a href="/xueyb0911.github.io/2018/03/30/Github更换主题中遇到的问题/" class="btn btn-default">阅读全文</a>
+    </div>
+
+    <div class="post-footer">   
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
         </div>
-    </footer>
+        <div>
+            
+        </div>  
+    </div>
 </article>
 
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/xueyb0911.github.io/2018/03/26/hello-world/">Hello World</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2018年03月26日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
-            
-        </p> 
-    </div>
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+<div class="article-nav prev-next-wrap clearfix">
     
     
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/ ">
-             
-        </a>
-    </span>
+        <a href="/xueyb0911.github.io/2018/03/26/hello-world/" class="next-post btn btn-default">下一篇<i class="fa fa-angle-right fa-fw"></i></a>
     
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                 
-            
-        </span>
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">2018/03/26</span>
-    </span>
 </div>
 
-        </div>
 
-        <div class="post-permalink"> 
-            <a href="/xueyb0911.github.io/2018/03/26/hello-world/" class="btn btn-default">阅读全文</a>
-        </div>
-    </footer>
-</article>
+    <div id="comments">
+        
+	<!--PC和WAP自适应版-->
+<div id="SOHUCS"></div>
+<script type="text/javascript">
+	(function(){var appid='cyt8KmUC1';var conf='prod_855a68d3b3d91855360a6215672a505a';var width=window.innerWidth||document.documentElement.clientWidth;if(width<960){window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id='+appid+'&conf='+conf+'"><\/script>');}else{var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}
+	c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});}})();
+</script>	
 
+    </div>
 
 
 
