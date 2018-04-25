@@ -171,14 +171,14 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br><span class="line">  hub:</span><br><span class="line">  content:</span><br><span class="line">  content_limit: 140</span><br><span class="line">  content_limit_delim: &apos; &apos;</span><br></pre></td></tr></table></figure>
 <p>​    编译之后，<code>public</code> 根目录下会生成 <code>atom.xml</code> 文件，这就说明成功了。另         外，一般主题都会默认配置好 RSS 文件的路径，如果没有，则在主题的配置文件里填上即可。</p>
 <h3 id="3，安装遇到的问题"><a href="#3，安装遇到的问题" class="headerlink" title="3，安装遇到的问题"></a>3，安装遇到的问题</h3><p>​    我在按照上述步骤安装成功之后，编译生成了     <code>atom.xml</code> 文件，主题里也配置了RSS路径，但我打开rss之后，就报错找不到  <code>atom.xml</code>文件：</p>
-<p>​    <img src="\xueyb0911.github.io\xueyb_img\atom_err.png" alt=""></p>
+<p>​    <img src="\xueyb0911.github.io\xueyb\atom_err.png" alt=""></p>
 <h3 id="4，原因"><a href="#4，原因" class="headerlink" title="4，原因"></a>4，原因</h3><p>​    是因为我改了博客配置文件      <code>_config.yml</code> 里的url和root属性：</p>
-<p>​        <img src="\xueyb0911.github.io\xueyb_img\yml.png" alt=""></p>
+<p>​        <img src="\xueyb0911.github.io\xueyb\yml.png" alt=""></p>
 <p>​    导致配置的Rss路径找不到文件。</p>
 <h3 id="5，解决方案"><a href="#5，解决方案" class="headerlink" title="5，解决方案"></a>5，解决方案</h3><p>​    可以把博客配置文件      <code>_config.yml</code> 里的url和root属性改回原来的：</p>
-<p>​        <img src="\xueyb0911.github.io\xueyb_img\yml2.png" alt=""></p>
+<p>​        <img src="\xueyb0911.github.io\xueyb\yml2.png" alt=""></p>
 <p>​    也可以在主题的配置文件里改变Rss配置的路径：</p>
-<p>​        <img src="\xueyb0911.github.io\xueyb_img\themes_yml.png" alt=""></p>
+<p>​        <img src="\xueyb0911.github.io\xueyb\themes_yml.png" alt=""></p>
 
     </div>
 
