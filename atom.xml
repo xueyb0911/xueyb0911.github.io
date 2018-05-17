@@ -6,7 +6,7 @@
   <link href="/xueyb0911.github.io/atom.xml" rel="self"/>
   
   <link href="https://xueyb0911.github.io/blog/"/>
-  <updated>2018-04-25T07:57:26.321Z</updated>
+  <updated>2018-05-17T07:32:53.994Z</updated>
   <id>https://xueyb0911.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS-timer</title>
+    <link href="https://xueyb0911.github.io/blog/2018/05/17/JS-timer/"/>
+    <id>https://xueyb0911.github.io/blog/2018/05/17/JS-timer/</id>
+    <published>2018-05-17T07:12:04.000Z</published>
+    <updated>2018-05-17T07:32:53.994Z</updated>
+    
+    <summary type="html">
+    
+      js定时器
+    
+    </summary>
+    
+      <category term="薛玉博" scheme="https://xueyb0911.github.io/blog/categories/%E8%96%9B%E7%8E%89%E5%8D%9A/"/>
+    
+    
+      <category term="js，定时器" scheme="https://xueyb0911.github.io/blog/tags/js%EF%BC%8C%E5%AE%9A%E6%97%B6%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>Github-Rss</title>
