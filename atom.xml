@@ -6,7 +6,7 @@
   <link href="/xueyb0911.github.io/atom.xml" rel="self"/>
   
   <link href="https://xueyb0911.github.io/blog/"/>
-  <updated>2018-05-17T07:42:33.143Z</updated>
+  <updated>2018-06-13T07:26:20.330Z</updated>
   <id>https://xueyb0911.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js-with</title>
+    <link href="https://xueyb0911.github.io/blog/2018/06/13/js-with/"/>
+    <id>https://xueyb0911.github.io/blog/2018/06/13/js-with/</id>
+    <published>2018-06-13T07:05:33.000Z</published>
+    <updated>2018-06-13T07:26:20.330Z</updated>
+    
+    <summary type="html">
+    
+      js-with关键字
+    
+    </summary>
+    
+      <category term="薛玉博" scheme="https://xueyb0911.github.io/blog/categories/%E8%96%9B%E7%8E%89%E5%8D%9A/"/>
+    
+    
+      <category term="js，with" scheme="https://xueyb0911.github.io/blog/tags/js%EF%BC%8Cwith/"/>
+    
+  </entry>
   
   <entry>
     <title>JS-timer</title>
