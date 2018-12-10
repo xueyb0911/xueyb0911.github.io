@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+	<title>Vue</title>
+	<style>
+		#app {
+			margin: 20px;
+		}
+		.class1{
+			color: red;
+		}
+		.active {
+			width: 100px;
+			height: 100px;
+			background: green;
+		}
+		.textdanger {
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" >
+		<test>
+			<h1 slot="title">title</h1>
+			<div slot="val">valvalvalvalvalvalvalvalval</div>
+		</test>
+		<h1>Hello App!</h1>
+		  <p>
+		    <!-- 使用 router-link 组件来导航. -->
+		    <!-- 通过传入 `to` 属性指定链接. -->
+		    <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+		    <router-link to="/foo">Go to Foo</router-link>
+		    <router-link to="/bar">Go to Bar</router-link>
+		  </p>
+		  <!-- 路由出口 -->
+		  <!-- 路由匹配到的组件将渲染在这里 -->
+		  <router-view></router-view>
+	</div>
+	<template id="test2">
+		<div>
+			<slot name="title"></slot>
+			<slot name="val"></slot>
+		</div>
+	</template>
+</body>
+<script src="./src/vue.js"></script>
+<script src="./src/vue-router.js"></script>
+<script src="./src/index.js"></script>
+<script src="./src/main.js"></script>
+
+</html>

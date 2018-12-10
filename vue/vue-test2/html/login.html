@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="../css/login.css" />
+	<style>
+		.headimg {
+			width: 100%;
+			height: 100px;
+			background-color: #e1017e;
+			text-align: center;
+		}
+		.headimg div {
+			width: 100px;
+			height: 100px;
+			box-sizing: border-box;
+			background-image: url(../image/default_square.png);
+			background-size: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			border: 3px solid #b10063;
+			border-radius: 50%;
+			display: inline-block;
+		}
+		.info {
+			width: 100%;
+			height: 100px;
+			background-color: #e1017e;
+			color: #fff;
+			text-align: center;
+		}
+		.info p {
+			padding-top: 20px;
+		}
+		.userlist {
+			width: 100%
+		}
+		.userlist li {
+			width: 100%;
+			height: 70px;
+			border-bottom: 1px solid #888;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		li img {
+			width: 20px;
+			height: 25px;
+		}
+		li .leftimg {
+			margin-left: 15px;
+		}
+		.myorder {
+			font-size: 16px;
+			margin-left: 15px;
+		}
+		.left,.right {
+			display: flex;
+			align-items: center;
+		}		
+		li .rightimg {
+			margin-right: 15px;
+		}
+		li .right span {
+			font-size: 15px;
+			margin-right: 15px;
+			color: #888;
+		}
+		footer {
+			width: 100%;
+			height: 50px;
+			position: absolute;
+			bottom: 0px;
+			/*border: 1px solid #888;*/
+		}
+		footer div {
+			display: inline-block;
+		}
+		footer div img {
+			width: 20px;
+			height: 15px;
+			vertical-align: middle;
+		}
+		footer div span {
+			vertical-align: middle;
+			height: 50px;
+			line-height: 50px;
+		}
+		footer .set {
+			margin-left: 15px;
+		}
+		footer .message {
+			margin-left: 100px;
+		}
+		footer .service {
+			float: right;
+			margin-right: 15px;
+		}
+		.setpage {
+			width: 100%;
+			height: 50px;
+			border-bottom: 1px solid #888;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.setpage span {
+			margin-left: 15px;
+		}
+		.setpage img {
+			margin-right: 15px;
+		}
+	</style>
+</head>
+<body>
+	<div id="login">
+		<router-view></router-view>
+	</div>
+	<template id="login-input">
+		<div>
+			<input type="text" class="logininput" placeholder="用户名" v-model="username">
+			<input type="text" class="logininput" placeholder="密码" v-model="password">
+			<div class="Lbtn"@click="onLogin()">登录</div>
+			<div class="wx-login">
+				<img src="../image/share_friend.png" alt="">
+				<span>使用微信登录</span>
+			</div>
+		</div>		
+	</template>
+	<template id="register">
+		<div>
+			<input type="text" class="logininput" placeholder="用户名" v-model="username">
+			<input type="text" class="logininput" placeholder="密码" v-model="password">
+			<div class="Lbtn"@click="onRegister()">注册</div>
+		</div>		
+	</template>
+	<template id="userinfo">
+		<div>
+			<div class="headimg">
+				<div @click="selectLocationImg()" v-bind:style="imgUrl | isNull">
+					<input type="file" id="selectImg" hidden="true" @change="getFile">
+				</div>
+			</div>
+			<div class="info">
+				<p>boread</p>
+				<p>积分：0 |余额：￥0</p>
+			</div>
+			<ul class="userlist">
+				<li @click="toNextPage('myorder')">
+					<div class="left">
+						<img src="../image/img_item_myorder.png" class="leftimg">
+						<span class="myorder">我的订单</span>
+					</div>
+					<div class="right">
+						<span class="orderdetail">查看所有订单详情</span>
+						<img src="../image/arrow_right.png" class="rightimg">
+					</div>
+				</li>
+				<li @click="toNextPage('myaccount')">
+					<div class="left">
+						<img src="../image/img_item_myorder.png" class="leftimg">
+						<span class="myorder">我的账户</span>
+					</div>
+					<div class="right">
+						<span class="orderdetail">充值有礼</span>
+						<img src="../image/arrow_right.png" class="rightimg">
+					</div>
+				</li>
+				<li @click="toNextPage('discounts')">
+					<div class="left">
+						<img src="../image/img_item_myorder.png" class="leftimg">
+						<span class="myorder">优惠卷</span>
+					</div>
+					<div class="right">
+						<span class="orderdetail">查看我的优惠卷</span>
+						<img src="../image/arrow_right.png" class="rightimg">
+					</div>
+				</li>
+				<li @click="toNextPage('address')">
+					<div class="left">
+						<img src="../image/img_item_myorder.png" class="leftimg">
+						<span class="myorder">收货地址</span>
+					</div>
+					<div class="right">
+						<span class="orderdetail">管理我的收货地址</span>
+						<img src="../image/arrow_right.png" class="rightimg">
+					</div>
+				</li>
+			</ul>
+			<footer>
+				<div class="set" @click="toNextPage('set')">
+					<img src="../image/user_setting.png" alt="">
+					<span>设置</span>
+				</div>
+				<div class="message" @click="toNextPage('message')">
+					<img src="../image/icon_user_messages.png" alt="">
+					<span>消息</span>	
+				</div>
+				<div class="service" @click="toNextPage('service')">
+					<img src="../image/user_call.png" alt="">
+					<span>客服</span>
+				</div>
+			</footer>
+		</div>		
+	</template>
+	<template id="set">
+		<div>
+			<div class="setpage">
+				<span class="">清除缓存</span>
+				<img src="../image/arrow_right.png" class="">
+			</div>
+			<div class="setpage">
+				<span class="">关于</span>
+				<img src="../image/arrow_right.png" class="">
+			</div>
+			<div class="Lbtn"@click="exitLogin()">退出登录</div>
+		</div>
+	</template>
+</body>
+<script src="../src/vue.js"></script>
+<script src="../src/vue-router.js"></script>
+<script src="../src/axios.js"></script>
+<script src="../src/router.js"></script>
+<script src="../src/common.js"></script>
+<script src="../src/login.js"></script>
+</html>

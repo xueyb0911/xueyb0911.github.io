@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		header {
+			width: 100%;
+			height: 50px;
+			background-color: #e1017e;
+		}
+		.back {
+			width: 50px;
+			height: 50px;
+			background-image: url(./src/assets/image/back.png);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 10px;
+			position: absolute;
+		    top: 0px;
+		    left: 0;
+		}
+		header .register{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			cursor: pointer;
+			background-image: url(./src/assets/image/accounthelp.png);
+			background-size: 20px;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		.money{
+			width: 100%;
+			height: 120px;
+			background-color: #e1017e;
+			text-align: center;
+			color: #fff;
+		}
+		.top{
+			padding-top: 30px;
+			margin-bottom: 20px;
+			font-size: 12px;
+		}
+		.btm{
+			font-weight: bolder;
+			font-size: 16px;
+		}
+		.czyl-div{
+			display: flex;
+			justify-content: space-between;
+		}
+		.czyl-img{
+			margin:15px;
+			width: 200px;
+			height: auto;
+			display: flex;
+			flex-flow: column;
+			/*background-image: url(./src/assets/image/recharge_top.png);
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;*/
+			position: relative;
+		}
+		.czyl-img img:nth-of-type(odd){
+			width: 200px;
+		}
+		.czyl-img div:first-child{
+			position: absolute;
+			top: 0px;
+			margin:25px;
+			color: #fff;
+			width: 150px;
+			text-align: center;
+		}
+		.czyl-img div:first-child span:first-child{
+			font-size: 25px;
+			font-weight: bold;
+			margin-right: 15px;
+			vertical-align: middle;
+		}
+		.czyl-img div:first-child span:last-child{
+			font-size: 20px;
+		}
+		.czyl-img div:first-child div{
+			font-size: 15px;
+			display: inline-block;
+			vertical-align: middle;
+			text-align: left;
+		}
+		.czyl-img div:last-child{
+			position: absolute;
+			bottom: 0px;
+			width: 160px;
+			height: 30px;
+			margin: 8px 20px;
+			background-image: url(./src/assets/image/recharge_button.png);
+			background-position: center;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			text-align: center;
+			color: #fff;
+			font-size: 15px;
+			line-height: 30px;
+		}
+		.recharge_tag{
+			position: absolute;
+			top: 0px;
+			right: 0px;
+		}
+		.czyl-img div:nth-of-type(2){
+			position: absolute;
+			top: 20px;
+			right: 10px;
+			color: #FE6100;
+			transform: rotate(45deg);
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="back" @click="Lfun()"></div>
+		<div class="register" @click="Rfun()"></div>
+	</header>
+	<div class="money">
+		<div class="top">优鲜余额</div>
+		<div class="btm">￥0</div>
+	</div>
+	<div class="czyl-div">
+		<div class="czyl-img">
+			<div>
+				<span>999</span>
+				<div><p>￥</p><p>余额</p></div><br/>
+				<span>另送100元</span>
+			</div>
+			<img src="./src/assets/image/recharge_top.png" alt="">
+			<img src="./src/assets/image/recharge_tag.png" class="recharge_tag">
+			<img src="./src/assets/image/recharge_bottom.png" alt="">
+			<div>充就送</div>
+			<div>购买</div>
+		</div>
+		<div class="czyl-img">
+			<div>
+				<span>1999</span>
+				<div><p>￥</p><p>余额</p></div><br/>
+				<span>另送100元</span>
+			</div>
+			<img src="./src/assets/image/recharge_top.png" alt="">
+			<img src="./src/assets/image/recharge_tag.png" class="recharge_tag">
+			<img src="./src/assets/image/recharge_bottom.png" alt="">
+			<div>充就送</div>
+			<div>购买</div>
+		</div>
+	</div>
+</body>
+</html>
