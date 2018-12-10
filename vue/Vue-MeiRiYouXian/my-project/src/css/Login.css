@@ -1,0 +1,48 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.logininput {
+	width: 80%;
+	height: 50px;
+	box-sizing: border-box;
+	margin: 30px 10% 0px 10%;
+	padding-left: 3px;
+	border: 1px solid #fff;
+	border-bottom-color: #e5e5e5;
+	outline: none;
+}
+.Lbtn {
+	width: 80%;
+	height: 50px;
+	box-sizing: border-box;
+	background-color: #e1017e;
+	border: 1px solid #fff;
+	margin: 30px 10% 0px 10%;
+	border-radius: 15px;
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	line-height: 50px;
+}
+.wx-login {
+	width: 50%;
+	height: 50px;
+	border: 1px solid #e5e5e5;
+	text-align: center;
+	margin-top: 30px;
+	margin-left: 25%;
+}
+.wx-login img {
+	width: 30px;
+	height: 20px;
+	vertical-align: middle;
+}
+.wx-login span {
+	height: 50px;
+	line-height: 50px;
+	/*border: 1px solid #e5e5e5;*/
+	color: #e5e5e5;
+	font-size: 18px;
+	vertical-align: middle;
+}

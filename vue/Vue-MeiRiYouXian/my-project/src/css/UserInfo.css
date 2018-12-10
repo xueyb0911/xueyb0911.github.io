@@ -1,0 +1,92 @@
+.headimg {
+	width: 100%;
+	height: 100px;
+	background-color: #e1017e;
+	text-align: center;
+}
+.headimg div {
+	width: 100px;
+	height: 100px;
+	box-sizing: border-box;
+	background-image: url(../assets/image/default_square.png);
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	border: 3px solid #b10063;
+	border-radius: 50%;
+	display: inline-block;
+}
+.userinfo {
+	width: 100%;
+	height: 100px;
+	background-color: #e1017e;
+	color: #fff;
+	text-align: center;
+}
+.userinfo p {
+	padding-top: 20px;
+}
+.userlist {
+	width: 100%
+}
+.userlist li {
+	width: 100%;
+	height: 70px;
+	border-bottom: 1px solid #888;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+li img {
+	width: 20px;
+	height: 25px;
+}
+li .leftimg {
+	margin-left: 15px;
+}
+.myorder {
+	font-size: 16px;
+	margin-left: 15px;
+}
+.left,.right {
+	display: flex;
+	align-items: center;
+}		
+li .rightimg {
+	margin-right: 15px;
+}
+li .right span {
+	font-size: 15px;
+	margin-right: 15px;
+	color: #888;
+}
+footer {
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	bottom: 0px;
+	/*border: 1px solid #888;*/
+}
+footer div {
+	display: inline-block;
+}
+footer div img {
+	width: 20px;
+	height: 15px;
+	vertical-align: middle;
+}
+footer div span {
+	vertical-align: middle;
+	height: 50px;
+	line-height: 50px;
+}
+footer .set {
+	margin-left: 15px;
+}
+footer .message {
+	margin-left: 100px;
+}
+footer .service {
+	float: right;
+	margin-right: 15px;
+}

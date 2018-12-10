@@ -1,0 +1,192 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.app {
+	width: 100%;
+	position: absolute;
+	top: 40px;
+	/*z-index: 99;*/
+}
+nav {
+	width: 100%;
+	height: 50px;
+	/*position: absolute;
+	top: 40px;*/
+	background-color: #e1017e;
+}
+nav div {
+	display: inline-block;
+	width: 20%;
+	height: 50px;
+	text-align: center;
+	color: #f973b8;
+	line-height: 50px;
+	font-size: 13px;
+}
+.selected {
+	font-size: 14px;
+    color: #fff;
+    font-weight: bolder;
+}
+.banner {
+	width: 100%;	
+	position: relative;		
+}
+.banner img {
+	width: 100%;
+	height: 200px;
+	padding: 5px 15px;
+	box-sizing: border-box;
+}
+.list {
+	width: 100%;
+	background-color: #fff;
+	height: 200px;
+	width: 100%;
+	/*border-bottom: 1px solid #e5e5e5;*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+.container {
+	height: 200px;
+	width: 100%;
+	/*border-bottom: 1px solid #e5e5e5;*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+.left-img {
+	width: 100px;
+	height: 100px;
+	margin-left: 20px;
+}
+.name {
+	font-size: 16px;		
+}
+.description {
+	font-size: 14px;
+	color: #e5e5e5;		
+}
+.price {
+	font-size: 14px;
+	color: red;		
+}
+.price .num {
+	font-size: 8px;
+	color: #e5e5e5;
+}
+.price-tag {
+	font-size: 10px;	
+	color: #e5e5e5;
+}
+.price-tag span {
+	text-decoration: line-through;	
+}
+.list .right {
+	margin-right: 20px;
+	margin-top: 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/*width: 200px;*/
+	/*border: 1px solid #000;*/
+}
+.panel {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.right-img {
+	width: 20px;
+	height: 20px;	
+	margin-left: 5px;	
+}
+.minus {
+	margin-right: 5px;
+}
+.count {
+	width: 40px;
+	height: 20px;
+	display: inline-block;
+	border: 1px solid #000;
+	border-radius: 15px;
+	text-align: center;
+	line-height: 20px;
+}
+.line {
+	height: 1px;
+	/*background-color: #e5e5e5;*/
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0px 10px;
+	position: absolute;
+	bottom: 0px;
+}
+.line2 {
+	height: 1px;
+	background-color: #e5e5e5;
+	width: 100%;
+}
+.minicart {
+	background-color: red;
+	border: 3px solid #fff;
+	border-radius: 0px 15px 15px 0px;
+	/*width: 40px;*/
+	min-width: 40px;
+	height: 30px;
+	color: #fff;
+	text-align: center;
+	position: fixed;
+	bottom: 30px;
+	left: 0px;
+	z-index: 2;
+}
+.minicart span {
+	height: 30px;
+	line-height: 30px;
+}
+.minicart .num {
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	color: red;
+	padding-right: 5px;
+	padding-left: 5px;
+	margin-right: 3px;
+	width: 20px;
+	height: 20px;
+	font-size: 13px;
+}
+.more_data {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+.city-list {
+	position: absolute;
+	top: 40px;
+}
+.router {
+	text-decoration: none;
+	color: #fff;
+}
+.routerView {
+	z-index: 10;
+	position: absolute;
+	top: 40px;
+	background-color: #000;
+	width: 100%;
+	/*height: 1000px;*/
+	opacity: 0.7;
+	color: #fff;
+	overflow: auto;
+}
+.info{
+	/*border: 1px solid #000;*/
+	width: 200px;
+}
