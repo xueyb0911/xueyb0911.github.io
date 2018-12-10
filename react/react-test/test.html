@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	<script src="./src/react.min.js"></script>
+	<script src="./src/react-dom.js"></script>
+	<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		function Click(props){
+			return(
+				<div>
+					<h1>Hello World</h1>
+					<p>现在是{props.date.toLocaleTimeString()}</p>
+				</div>
+			)
+			
+		}
+
+		class Click2 extends React.Component{
+			render(){
+				return(
+					<div>
+						<h1>Hello World</h1>
+						<p>2.现在是{this.props.date.toLocaleTimeString()}</p>
+					</div>
+				)
+			}
+		}
+		class Click3 extends React.Component{
+			constructor(props){
+				super(props)
+				this.state = {
+					date:new Date()
+				}
+			}
+			componentDidMount(){
+				var click = this
+				this.timeId = setInterval(function(){
+					click.setState({
+						date:new Date()	
+					})
+				},1000)
+			}
+			componentWillUnmount(){
+				clearInterval(this.timeId)
+			}
+			render(){
+				return(
+					<div>
+						<h1>Hello World</h1>
+						<p>3.现在是{this.state.date.toLocaleTimeString()}</p>
+					</div>
+				)
+			}
+		}
+		class WebSite extends React.Component{
+			constructor(){
+				super()
+				this.state = {
+					name:"菜鸟教程",
+					url:"https://www.runoob.com"
+				}
+			}
+			render(){
+				return(
+					<div>
+						<Name name={this.state.name}></Name>
+						<Site url={this.state.url}></Site>
+					</div>
+				)
+			}
+		}
+		class Name extends React.Component{
+			render(){
+				return(
+					<h1>{this.props.name}</h1>
+				)
+			}
+		}
+		class Site extends React.Component{
+			render(){
+				return(
+					<a href={this.props.url} target="_blank">{this.props.url}</a>
+				)
+			}
+		}
+		class Click4 extends React.Component{
+			handclick(e){
+				e.preventDefault()
+				console.log("qqqqqqq")
+			}
+			render(){
+				return(
+					<div>
+						<a href="#" onClick={this.handclick.bind(this)}>点击</a>
+					</div>
+				)
+			}			
+		}
+		class Toggle extends React.Component{
+			constructor(){
+				super();
+				this.state = {
+					isToggleOn:true
+				}
+			}
+			handClick(val,e){
+				e.preventDefault()
+				console.log(val)
+				this.setState({
+					isToggleOn : !this.state.isToggleOn
+				})
+			}
+			render(){
+				return(
+					<button onClick={this.handClick.bind(this,this.state.isToggleOn)}>{this.state.isToggleOn ? "ON" : "OFF"}</button>
+				)
+			}
+		}
+		class LoginControl extends React.Component{
+			constructor(){
+				super()
+				this.state={
+					isLogin:true
+				}
+			}
+			handClick(){
+				this.setState({
+					isLogin : !this.state.isLogin
+				})
+			}
+			render(){
+				var button;
+				if(this.state.isLogin){
+					button = <div>Welcome</div>
+				}else{
+					button = <div>Plase Login</div>
+				}
+				return(
+					<div>
+						{this.state.isLogin ? <div>Welcome</div> : <div>Plase Login</div>}
+						<button onClick={this.handClick.bind(this)}>{this.state.isLogin ? "退出登录" : "点击登录"}</button>
+					</div>
+					
+				)
+			}
+		}
+		const numbers = [1,2,3,4,5];
+		const list = numbers.map((number) =>{
+			return <li>{number}</li>
+		})
+		class Content extends React.Component{
+			render(){
+				return(
+					<div>
+						<input type="text" value={this.props.val} onChange={this.props.change} />
+						<h1>{this.props.val}</h1>
+					</div>
+				)
+			}
+		}
+		class HelloMessage extends React.Component{
+			constructor(){
+				super()
+				this.state = {
+					val : ""
+				}
+			}
+			changeVal(event){
+				this.setState({
+					val : event.target.value
+				})
+			}
+			render(){
+				return(
+					<div>
+						<Content val={this.state.val} change={this.changeVal.bind(this)} />
+					</div>
+				)
+			}
+		}
+		class FlavorFrom extends React.Component{
+			handChange(event){
+				alert(event.target.value)
+			}
+			render(){
+				return(
+					<select name="" id="" onChange={this.handChange}>
+						<option value="1">google</option>
+						<option value="2">baidu</option>
+						<option value="3">xinlang</option>
+						<option value="4">weixin</option>
+					</select>
+				)
+			}
+		}
+		class MyComponent extends React.Component{
+			componentDidMount(){
+				console.log(this)
+				this.refs.myInput.focus()
+			}
+			render(){
+				return(
+					<input type="text" ref="myInput" />
+				)
+			}
+		}
+
+		ReactDOM.render(
+			<div>
+				<MyComponent />
+			</div>,
+		    document.getElementById('example')
+		);
+	</script>
+	
+</body>
+</html>

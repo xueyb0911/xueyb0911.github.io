@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Main</title>
+	<script src="./src/react.min.js"></script>
+	<script src="./src/react-dom.js"></script>
+	<script src="./src/axios.js"></script>
+	<script src="./src/react-router.js"></script>
+	<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<link rel="stylesheet" type="text/css" href="./css/login.css">
+	<style>
+	</style>
+</head>
+<body>
+	<div id="main"></div>
+	<script type="text/babel">
+		class MainTitle extends React.Component{
+			render(){
+				return(
+					<div className="title">
+						<div className="left">
+							<img src="./image/arrow_down.png" alt="" />
+							<span>北京市</span>
+						</div>
+						<div className="title-img">
+							<img src="./image/home_title.png"  />
+						</div>
+						<div className="right"></div>
+					</div>
+				)
+			}
+		}
+		class Nav extends React.Component{
+			render(){
+				return(
+					<nav>
+						{this.props.listItems.map(item => {
+							return item.selected ? <div key={item.id} className="selected">{item.name}</div> : <div key={item.id} onClick={this.props.itemClick.bind(this,item.id)}>{item.name}</div>
+						})}	
+					</nav>
+				)
+			}
+		}
+		class Banner extends React.Component{
+			render(){
+				return(
+					<div className="banner"> 
+						{this.props.listItems.map(item => {
+							return item.selected ? <img src={item.banner.url} key={item.id} alt="" /> : ""
+						})}	
+					</div>
+				)
+			}
+		}
+		class Lists extends React.Component{
+			addData(id,price){
+				this.props.add(id,price)
+			}
+			delData(id,price){
+				this.props.del(id,price)
+			}
+			render(){
+				return(
+					<div> 
+						{this.props.lists == "" ? "" : 
+						this.props.lists.map(item => {
+							return	<div className="list" key={item.id}> 
+										<img src={item.thumbnail.url} className="left-img" alt="" />
+										<div className="info">
+											<p className="name">{item.name}</p>
+											<p className="description">{item.description}</p>
+											<p className="price"><span>￥{item.price}</span><span className="num">/{item.unit}</span></p>
+											<p className="price-tag">超市：<span>{item.originPrice}</span></p>
+										</div>
+										<div className="list-right">
+											{ 
+												 this.props.buyCount.map(count => {
+													return count.id == item.id && count.count > 0 ? 
+													<div className="panel" key={count.id}>
+														<img src="./image/minus.png" className="right-img minus" alt="" onClick={this.delData.bind(this,item.id,item.price)}  />
+														<div className="count">{count.count}</div>
+													</div> : ""
+												})
+											}
+											<img src="./image/add.png" className="right-img" alt="" onClick={this.addData.bind(this,item.id,item.price)} />
+										</div>
+										<div className="line"><div className="line2"></div></div>
+									</div>
+						})}
+					</div>
+				)
+			}
+		}
+		class Mes extends React.Component{
+			render(){
+				return(
+					<div className="more_data">{this.props.message}</div>
+				)
+			}
+		}
+		class MiniCart extends React.Component{
+			render(){
+				return(
+					<div className="minicart">
+						<span>￥</span>
+						<span>{this.props.allPrice}</span>
+						{this.props.allBuyCount > 0 ? <span className="num">{this.props.allBuyCount}</span> : ""}
+					</div> 
+				)
+			}
+		}
+		class ListItems extends React.Component{
+			constructor(){
+				super()
+				this.state = {
+					listItems:[
+						{
+				            "id": "56c80da883af652643474b6b",
+				            "name": "水果",
+				            "selected": true,
+				            "banner": {
+				                "url": "http://7y0hol.com1.z0.glb.clouddn.com/apicloud/f761997f8fd33af25af5354737e37bcc.png",
+				                "id": "57f63bdf0d3febfe58585568"
+			            	}
+				        }, 
+				        {
+				            "id": "56c80db78d04c83d3d1dedea",
+				            "name": "食材",
+				            "selected": false,
+				            "banner": {
+				                "url": "http://7y0hol.com1.z0.glb.clouddn.com/apicloud/be93f9fdeda576ad81d0c728528cef50.png",
+				                "id": "57f63be70d3febfe5858556c"
+				            }
+				        }, 
+				        {
+				            "id": "56c80dc031da9e480de1cb49",
+				            "name": "零食",
+				            "selected": false,
+				            "banner": {
+				                "url": "http://7y0hol.com1.z0.glb.clouddn.com/apicloud/be93f9fdeda576ad81d0c728528cef50.png",
+				                "id": "57f63bec9592b3fc6a341b59"
+				            }
+				        }, 
+				        {
+				            "id": "56c80dc383af652643474b6d",
+				            "name": "牛奶",
+				            "selected": false,
+				            "banner": {
+				                "url": "http://7y0hol.com1.z0.glb.clouddn.com/apicloud/f761997f8fd33af25af5354737e37bcc.png",
+				                "id": "57f63bf0c6f05d0956108828"
+				            }
+				        }, 
+				        {
+				            "id": "56c80dc88d04c83d3d1dedf3",
+				            "name": "蔬菜",
+				            "selected": false,
+				            "banner": {
+				                "url": "http://7y0hol.com1.z0.glb.clouddn.com/apicloud/be93f9fdeda576ad81d0c728528cef50.png",
+				                "id": "57f63bf39592b3fc6a341b5d"
+				            }
+				        }
+			        ],
+			        lists:"", //数据列表
+			        buyCount:[], //购买列表
+			        message:"加载更多",
+			        allPrice:0,
+			        allBuyCount:0
+				}
+			}
+			getData(id){
+				var selectedId = id || "56c80da883af652643474b6b"
+				var params = {
+			        fields: {},
+			        where: {
+			            supportAreaId: "56c80e0c789b068408ab5a6f",
+			            wareTypeId: selectedId
+			        },
+			        skip: 0,
+			        limit: 5
+			    };
+			    var url = "http://d.apicloud.com/mcm/api/ware?filter=" + JSON.stringify(params);
+			    /*fetch(url,{headers: {
+	            "X-APICloud-AppId": "A6921544633372",
+	            "X-APICloud-AppKey": "2672b5911d8551540c1ea598e01c87fee217a1e5.1482500122476"}}).then(response => {
+	            	return response.text()
+	            }).then(text => {
+					console.log(text)
+	            })*/
+	            axios.get(url,{headers: {
+	            "X-APICloud-AppId": "A6921544633372",
+	            "X-APICloud-AppKey": "2672b5911d8551540c1ea598e01c87fee217a1e5.1482500122476"}}).then(res => {
+					this.setState({
+						lists : res.data
+					})
+	            },() => {
+	            	console.log("请求失败")
+	            })
+			}
+			setItemIndex(id){
+				var listItems = this.state.listItems
+				listItems = listItems.map(item => {
+					if(id == item.id){
+						item.selected = true
+					}else{
+						item.selected = false
+					}
+					return item
+				})
+				this.setState({
+					listItems : listItems
+				})
+				this.getData(id)
+			}
+			addCount(id,price){
+				var having = true;
+				var newBuyCount = this.state.buyCount.map(item => {
+					if(id == item.id){
+						item.count += 1;
+						having = false
+					}
+					return item
+				});
+				if(having){
+					newBuyCount.push({id:id,price:price,count:1})
+				}
+				this.setState({
+					buyCount : newBuyCount
+				})
+				this.allPrice(newBuyCount)
+				this.allBuyCount(newBuyCount)
+			}
+			delCount(id,price){
+				var newBuyCount = this.state.buyCount.map(item => {
+					if(id == item.id){
+						item.count -= 1;
+					}
+					return item
+				});
+				this.setState({
+					buyCount : newBuyCount
+				})
+			}
+			allPrice(buyCount){
+				var allPrice = 0;
+				/*var buyCount = this.state.buyCount;*/
+				for(var i = 0; i < buyCount.length; i++){
+					allPrice += buyCount[i].count * buyCount[i].price
+				}
+				allPrice = parseInt(allPrice*10)/10
+				this.setState({
+					allPrice : allPrice
+				})
+			}
+			allBuyCount(buyCount){
+				var allBuyCount = 0;
+				/*var buyCount = this.state.buyCount;*/
+				for(var i = 0; i < buyCount.length; i++){
+					allBuyCount += buyCount[i].count
+				}
+				this.setState({
+					allBuyCount : allBuyCount
+				})
+			}
+			componentWillMount(){
+				this.getData()
+				var self = this
+				window.addEventListener("scroll",function(){
+					let scrollTop = document.documentElement.scrollTop;
+					let innerH = window.innerHeight;
+					let scrollH = document.documentElement.scrollHeight;
+					if(scrollH - innerH - scrollTop == 0 ){
+						self.setState({
+							message:"没有啦！"
+						})
+					}
+				})
+			}
+			render(){
+				return(
+					<div>
+						<Nav listItems={this.state.listItems} itemClick={this.setItemIndex.bind(this)}/>
+						<Banner listItems={this.state.listItems}/>
+						<Lists lists={this.state.lists} buyCount={this.state.buyCount} add={this.addCount.bind(this)} del={this.delCount.bind(this)} />
+						<Mes message={this.state.message} />
+						<MiniCart allPrice={this.state.allPrice} allBuyCount={this.state.allBuyCount} />
+					</div>
+				)
+			}
+		}
+		class Main extends React.Component{
+			render(){
+				return(
+					<div>
+						<MainTitle />
+						<ListItems />
+					</div>
+				)
+			}
+		}
+		class LoginTitle extends React.Component{
+			render(){
+				return(
+					<header>
+						<h1>会员登录</h1>
+						<div className="back"></div>
+						<div className="register">注册</div>
+					 </header>
+				)
+			}
+		}
+		class LoginInput extends React.Component{
+			render(){
+				return(
+					<div>
+						<input type="text" className="logininput" placeholder="用户名" />
+						<input type="text" className="logininput" placeholder="密码" />
+						<div className="Lbtn">登录</div>
+						<div className="wx-login">
+							<img src="./image/share_friend.png" alt="" />
+							<span>使用微信登录</span>
+						</div>
+					</div>	
+				)
+			}
+		}
+		class Login extends React.Component{
+			render(){
+				return(
+					<div>
+						<LoginTitle />
+						<LoginInput />
+					</div>
+				)
+			}
+		}
+
+		ReactDOM.render(
+			<Router>
+	            <Route exact path="/" component={Main}/>
+	            <Route exact path="/detail" component={Login}/>
+		    </Router>,		
+			document.getElementById("main")
+		)
+	</script>
+</body>
+</html>

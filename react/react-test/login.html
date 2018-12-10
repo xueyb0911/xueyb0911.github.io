@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<script src="./src/react.min.js"></script>
+	<script src="./src/react-dom.js"></script>
+	<script src="./src/axios.js"></script>
+	<script src="./src/react-router.js"></script>
+	<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/login.css">
+</head>
+<body>
+	<div id="login"></div>
+	<script type="text/babel">
+		class Title extends React.Component{
+			render(){
+				return(
+					<header>
+						<h1>会员登录</h1>
+						<div className="back"></div>
+						<div className="register">注册</div>
+					 </header>
+				)
+			}
+		}
+		class LoginInput extends React.Component{
+			render(){
+				return(
+					<div>
+						<input type="text" className="logininput" placeholder="用户名" />
+						<input type="text" className="logininput" placeholder="密码" />
+						<div className="Lbtn">登录</div>
+						<div className="wx-login">
+							<img src="./image/share_friend.png" alt="" />
+							<span>使用微信登录</span>
+						</div>
+					</div>	
+				)
+			}
+		}
+		ReactDOM.render(
+			<div>
+				<Title />
+				<LoginInput />
+			</div>,
+			document.getElementById("login")
+		)
+	</script>
+</body>
+</html>
