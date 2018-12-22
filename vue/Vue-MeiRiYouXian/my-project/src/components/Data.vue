@@ -3,7 +3,7 @@
 		<WareType v-on:sendSelectedIdToData="getSelectedId"/>
 		<List v-bind:dataList="dataList"/>
 		<div class="more_data">{{message}}</div>
-		<Minicart />
+		<Minicart @click.native="goToNext"/>
 	</div>
 </template>
 <script>
@@ -65,6 +65,9 @@
 			    },function(){
 			    	console.log("请求失败")
 			    })
+			},
+			goToNext:function(){
+				this.$router.push("/shoppingCart")
 			}
 		},
 		mounted:function(){

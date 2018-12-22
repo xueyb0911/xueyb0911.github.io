@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="list" v-for="data in dataList">
+		<div class="list" v-for="data in dataList" @click="goToNext(data.id)">
 			<img v-bind:src="data.thumbnail.url" class="left-img">
 			<div class="info">
 				<p class="name">{{data.name}}</p>
@@ -38,6 +38,8 @@
 				return false
 			},
 			addCount:function(id,price){
+				// event.stoppropagation阻止事件向下传播
+				event.stopPropagation();
 				let having = true;
 				for(var key in this.buyCount){
 					if(this.buyCount[key].id == id){
@@ -52,6 +54,7 @@
 				window.localStorage.setItem("buyCountList",JSON.stringify(this.buyCount))
 			},
 			delCount:function(id){
+				event.stopPropagation();
 				for(var key in this.buyCount){
 					if(this.buyCount[key].id == id){
 						this.buyCount[key].count--
@@ -59,6 +62,9 @@
 				}
 				this.$store.commit("setBuyCount",this.buyCount)
 				window.localStorage.setItem("buyCountList",JSON.stringify(this.buyCount))
+			},
+			goToNext:function(id){
+				this.$router.push({name:"productDetails",params:{id:id}})
 			}
 		},
 		filters:{
